@@ -9,7 +9,8 @@ class ux_tx_indexedsearch extends tx_indexedsearch {
 	 * @return	void
 	 */
 	function initialize()	{
-
+		global $TYPO3_CONF_VARS;
+		
 			// Initialize external document parsers for icon display and other soft operations
 		if (is_array($TYPO3_CONF_VARS['EXTCONF']['indexed_search']['external_parsers']))	{
 			foreach ($TYPO3_CONF_VARS['EXTCONF']['indexed_search']['external_parsers'] as $extension => $_objRef)	{
