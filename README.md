@@ -3,16 +3,17 @@
 										- Adds title attribute to A tags in result pages browser.
 										- Modifies page results title accordi
 
-## Version 1.2.0
+## Version 1.2.1
 
 
 
 
 <table>
-	<tr><td>Version</td><td>1.2.0 stable</td></tr>
-	<tr><td>Release date</td><td>21. April 2011</td></tr>
+	<tr><td>Version</td><td>1.2.1 stable</td></tr>
+	<tr><td>Release date</td><td>19. October 2011</td></tr>
 	<tr><td>Author</td><td>Frederic Petit, Christophe Deleury</td></tr>
-	<tr><td>Comment</td><td>The extension can now be x classed as asked by Manuel Kammermann</td></tr>
+	<tr><td>Comment</td><td>Bug resolves : with config.absRefPrefix  / ,the generating links results with double //. We just use pi_linkTP_keepPIvars instead of pi_linkTP_keepPIvars_url and cObj-typoLink because they add / to the beginning.
+Thanks to Noel Bossart for this correct</td></tr>
 </table>
 
 ## !! Attention !!
