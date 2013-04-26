@@ -293,4 +293,8 @@ class ux_tx_indexedsearch extends tx_indexedsearch {
 	}
 
 }
+
+if (defined('TYPO3_MODE') && isset($GLOBALS['TYPO3_CONF_VARS'][TYPO3_MODE]['XCLASS']['ext/accessible_is_browse_results/pi/class.ux_tx_indexedsearch.php'])) {
+	include_once($GLOBALS['TYPO3_CONF_VARS'][TYPO3_MODE]['XCLASS']['ext/accessible_is_browse_results/pi/class.ux_tx_indexedsearch.php']);
+}
 ?>

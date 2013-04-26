@@ -3,15 +3,16 @@
 										- Adds title attribute to A tags in result pages browser.
 										- Modifies page results title accordi
 
-## Version 1.1.0
+## Version 1.2.0
 
 
 
 
 <table>
-	<tr><td>Version</td><td>1.1.0 stable</td></tr>
-	<tr><td>Release date</td><td>13. September 2007</td></tr>
+	<tr><td>Version</td><td>1.2.0 stable</td></tr>
+	<tr><td>Release date</td><td>21. April 2011</td></tr>
 	<tr><td>Author</td><td>Frederic Petit, Christophe Deleury</td></tr>
+	<tr><td>Comment</td><td>The extension can now be x classed as asked by Manuel Kammermann</td></tr>
 </table>
 
 ## !! Attention !!
