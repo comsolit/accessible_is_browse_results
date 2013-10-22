@@ -234,10 +234,9 @@ class ux_tx_indexedsearch extends tx_indexedsearch {
 				// Make browse-table/links:
 			if ($pointer>0)	{	// all pages after the 1st one
 				//$links[]='<li>'.$this->makePointerSelector_link($this->pi_getLL('pi_list_browseresults_prev','< Previous',1),$pointer-1,$freeIndexUid).'</li>';
-				//$typolink_conf['title']= $this->conf['pageTitleAdd'].' '.$this->piVars['sword'].' - '.$this->conf['pageTitlePage'].' '.($pointer);
-				//$typolink_conf['parameter']=$this->pi_linkTP_keepPIvars_url(array( $pointerName => ( $pointer - 1 ? $pointer - 1 : '' ) ),$this->allowCaching);
-				//$links[] = $pageWrap[0].$this->cObj->typoLink($this->pi_getLL( 'pi_list_browseresults_prev', '< Previous' ), $typolink_conf).$pageWrap[1].chr(10);
-				$links[] = $pageWrap[0].$this->pi_linkTP_keepPIvars($this->pi_getLL( 'pi_list_browseresults_prev', '< Previous' ),array( $pointerName => ( $pointer - 1 ? $pointer - 1 : '' ) ),$this->allowCaching).$pageWrap[1].chr(10); 
+				$typolink_conf['title']= $this->conf['pageTitleAdd'].' '.htmlspecialchars($this->piVars['sword']).' - '.$this->conf['pageTitlePage'].' '.($pointer);
+				$typolink_conf['parameter']=$this->pi_linkTP_keepPIvars_url(array( $pointerName => ( $pointer - 1 ? $pointer - 1 : '' ) ),$this->allowCaching);
+				$links[] = $pageWrap[0].$this->cObj->typoLink($this->pi_getLL( 'pi_list_browseresults_prev', '< Previous' ), $typolink_conf).$pageWrap[1].chr(10);
 			}
 
 			for($a=0;$a<$pageCount;$a++)	{
@@ -250,25 +249,22 @@ class ux_tx_indexedsearch extends tx_indexedsearch {
 				if($a >= $min && $a < $max)	{
 					if($a==$pointer)	{
 						//$links[]='<li'.$this->pi_classParam('browselist-currentPage').'><strong>'.$this->makePointerSelector_link(trim($this->pi_getLL('pi_list_browseresults_page','Page',1).' '.($a+1)),$a,$freeIndexUid).'</strong></li>';
-						//$conf['title']= $this->conf['pageTitleAdd'].' '.$this->piVars['sword'].' - '.$this->conf['pageTitlePage'].' '.($a+1);
-						//$typolink_conf['parameter']=$this->pi_linkTP_keepPIvars_url(array($pointerName => $a),$this->allowCaching);
-						//$links[] = $activePageWrap[0].$this->cObj->typoLink($this->pi_getLL('pi_list_browseresults_page','Page',1).' '.($a+1), $conf).$activePageWrap[1].chr(10);
-						$links[] = $activePageWrap[0].$this->pi_linkTP_keepPIvars($this->pi_getLL('pi_list_browseresults_page','Page',1).' '.($a+1),array($pointerName => $a),$this->allowCaching).$activePageWrap[1].chr(10);  
+						$conf['title']= $this->conf['pageTitleAdd'].' '.htmlspecialchars($this->piVars['sword']).' - '.$this->conf['pageTitlePage'].' '.($a+1);
+						$conf['parameter']=$this->pi_linkTP_keepPIvars_url(array($pointerName => $a),$this->allowCaching);
+						$links[] = $activePageWrap[0].$this->cObj->typoLink($this->pi_getLL('pi_list_browseresults_page','Page',1).' '.($a+1), $conf).$activePageWrap[1].chr(10);
 					} else {
 						//$links[]='<li>'.$this->makePointerSelector_link(trim($this->pi_getLL('pi_list_browseresults_page','Page',1).' '.($a+1)),$a,$freeIndexUid).'</li>';
-						//$typolink_conf['title']= $this->conf['pageTitleAdd'].' '.$this->piVars['sword'].' - '.$this->conf['pageTitlePage'].' '.($a+1);
-						//$typolink_conf['parameter']=$this->pi_linkTP_keepPIvars_url(array($pointerName => $a),$this->allowCaching);
-						//$links[] = $pageWrap[0].$this->cObj->typoLink($this->pi_getLL('pi_list_browseresults_page','Page',1).' '.($a+1), $typolink_conf).$pageWrap[1].chr(10);
-						$links[] = $pageWrap[0].$this->pi_linkTP_keepPIvars($this->pi_getLL('pi_list_browseresults_page','Page',1).' '.($a+1), array($pointerName => $a),$this->allowCaching).$pageWrap[1].chr(10); 
+						$typolink_conf['title']= $this->conf['pageTitleAdd'].' '.htmlspecialchars($this->piVars['sword']).' - '.$this->conf['pageTitlePage'].' '.($a+1);
+						$typolink_conf['parameter']=$this->pi_linkTP_keepPIvars_url(array($pointerName => $a),$this->allowCaching);
+						$links[] = $pageWrap[0].$this->cObj->typoLink($this->pi_getLL('pi_list_browseresults_page','Page',1).' '.($a+1), $typolink_conf).$pageWrap[1].chr(10);
 					}
 				}
 			}
 			if ($pointer+1 < $pageCount)	{
 				//$links[]='<li>'.$this->makePointerSelector_link($this->pi_getLL('pi_list_browseresults_next','Next >',1),$pointer+1,$freeIndexUid).'</li>';
-				//$typolink_conf['title']= $this->conf['pageTitleAdd'].' '.$this->piVars['sword'].' - '.$this->conf['pageTitlePage'].' '.($pointer+2);
-				//$typolink_conf['parameter']=$this->pi_linkTP_keepPIvars_url(array($pointerName => $pointer + 1),$this->allowCaching);
-				//$links[] = $pageWrap[0].$this->cObj->typoLink($this->pi_getLL(  'pi_list_browseresults_next', 'Next >'  ), $typolink_conf).$pageWrap[1].chr(10);
-				$links[] = $pageWrap[0].$this->pi_linkTP_keepPIvars($this->pi_getLL(  'pi_list_browseresults_next', 'Next >'  ),array($pointerName => $pointer + 1),$this->allowCaching).$pageWrap[1].chr(10);
+				$typolink_conf['title']= $this->conf['pageTitleAdd'].' '.htmlspecialchars($this->piVars['sword']).' - '.$this->conf['pageTitlePage'].' '.($pointer+2);
+				$typolink_conf['parameter']=$this->pi_linkTP_keepPIvars_url(array($pointerName => $pointer + 1),$this->allowCaching);
+				$links[] = $pageWrap[0].$this->cObj->typoLink($this->pi_getLL(  'pi_list_browseresults_next', 'Next >'  ), $typolink_conf).$pageWrap[1].chr(10);
 			}
 		}
 
@@ -296,9 +292,5 @@ class ux_tx_indexedsearch extends tx_indexedsearch {
 		return $sTables;
 	}
 
-}
-
-if (defined('TYPO3_MODE') && isset($GLOBALS['TYPO3_CONF_VARS'][TYPO3_MODE]['XCLASS']['ext/accessible_is_browse_results/pi/class.ux_tx_indexedsearch.php'])) {
-	include_once($GLOBALS['TYPO3_CONF_VARS'][TYPO3_MODE]['XCLASS']['ext/accessible_is_browse_results/pi/class.ux_tx_indexedsearch.php']);
 }
 ?>

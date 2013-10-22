@@ -19,7 +19,7 @@ $EM_CONF[$_EXTKEY] = array (
 										- A script comes with the extension which modifies "to top" link in order to work properly.',
 	'category' => 'plugin',
 	'shy' => 0,
-	'version' => '1.2.1',
+	'version' => '1.2.2',
 	'dependencies' => '',
 	'conflicts' => '',
 	'priority' => '',
